@@ -1,8 +1,11 @@
+import 'package:e_commerce/constants.dart';
 import 'package:e_commerce/screens/splash/components/splash_content.dart';
+import 'package:e_commerce/size_config.dart';
 import 'package:flutter/material.dart';
 
 // This is the best practice
 import '../components/splash_content.dart';
+import 'package:e_commerce/components/default_button.dart';
 
 class Body extends StatefulWidget {
   @override
@@ -10,6 +13,7 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
+  int currentPage = 0;
   List<Map<String, String>> splashData = [
     {
       "text": "Welcome to Tokoto, Let's shop!",
@@ -35,6 +39,11 @@ class _BodyState extends State<Body> {
             Expanded(
               flex: 3,
               child: PageView.builder(
+                onPageChanged: (value) {
+                  setState(() {
+                    currentPage = value;
+                  });
+                },
                 itemCount: splashData.length,
                 itemBuilder: (context, index) => SplashContent(
                   image: splashData[index]["image"],
@@ -42,12 +51,51 @@ class _BodyState extends State<Body> {
                 ),
               ),
             ),
-            const Expanded(
+            Expanded(
               flex: 2,
-              child: SizedBox(),
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: getProportionateScreenWidth(56),
+                ),
+                child: Column(
+                  children: <Widget>[
+                    Spacer(),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: List.generate(
+                        splashData.length,
+                        (index) => buildDot(index: index),
+                      ),
+                    ),
+                    Spacer(flex: 3),
+                    SizedBox(
+                      width: double.infinity,
+                      height: getProportionateScreenHeight(56),
+                      child: DefaultButton(
+                        text: "Continue",
+                        press: () {},
+                      ),
+                    ),
+                    Spacer(),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  AnimatedContainer buildDot({required int index}) {
+    return AnimatedContainer(
+      duration: kAnimationDuration,
+      margin: EdgeInsets.only(right: 5),
+      height: 6,
+      width: currentPage == index ? 20 : 6,
+      decoration: BoxDecoration(
+        color: currentPage == index ? kPrimaryColor : Color(0xFFD8D8D8),
+        borderRadius: BorderRadius.circular(3),
       ),
     );
   }
