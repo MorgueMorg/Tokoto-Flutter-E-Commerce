@@ -8,14 +8,35 @@ ThemeData theme() {
       fontFamily: "Muli",
       appBarTheme: appBarTheme(),
       textTheme: textTheme(),
+      inputDecorationTheme: inputDecorationTheme(),
       visualDensity: VisualDensity.adaptivePlatformDensity);
+}
+
+InputDecorationTheme inputDecorationTheme() {
+  return InputDecorationTheme(
+    floatingLabelBehavior: FloatingLabelBehavior.always,
+    contentPadding: EdgeInsets.symmetric(
+      horizontal: 42,
+      vertical: 20,
+    ),
+    enabledBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(28),
+      borderSide: BorderSide(color: kTextColor),
+      gapPadding: 10,
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(28),
+      borderSide: BorderSide(color: kTextColor),
+      gapPadding: 10,
+    ),
+  );
 }
 
 TextTheme textTheme() {
   return const TextTheme(
-      bodyLarge: TextStyle(color: kTextColor),
-      bodySmall: TextStyle(color: kTextColor),
-    );
+    bodyLarge: TextStyle(color: kTextColor),
+    bodySmall: TextStyle(color: kTextColor),
+  );
 }
 
 AppBarTheme appBarTheme() {
