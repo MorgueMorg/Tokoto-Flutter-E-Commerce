@@ -1,9 +1,9 @@
 import 'package:e_commerce/components/default_button.dart';
+import 'package:e_commerce/components/form_error.dart';
 import 'package:e_commerce/size_config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
-import 'custom_suffix_icon.dart';
+import '../../../components/custom_suffix_icon.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});
@@ -103,41 +103,6 @@ class _SignFormState extends State<SignForm> {
           svgIcon: "assets/icons/Mail.svg",
         ),
       ),
-    );
-  }
-}
-
-class FormError extends StatelessWidget {
-  const FormError({
-    super.key,
-    required this.errors,
-  });
-
-  final List<String> errors;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: List.generate(
-        errors.length,
-        (index) => formErrorText(error: errors[index]),
-      ),
-    );
-  }
-
-  Row formErrorText({required String error}) {
-    return Row(
-      children: [
-        SvgPicture.asset(
-          "assets/icons/Error.svg",
-          height: getProportionateScreenWidth(14),
-          width: getProportionateScreenWidth(14),
-        ),
-        SizedBox(
-          width: getProportionateScreenWidth(10),
-        ),
-        Text(error),
-      ],
     );
   }
 }
