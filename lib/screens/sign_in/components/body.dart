@@ -39,7 +39,7 @@ class Body extends StatelessWidget {
                 SizedBox(
                   height: SizeConfig.screenHeight * 0.08,
                 ),
-                const SignForm(),
+                SignForm(),
                 SizedBox(
                   height: SizeConfig.screenHeight * 0.08,
                 ),
