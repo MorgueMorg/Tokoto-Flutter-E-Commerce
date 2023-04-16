@@ -62,15 +62,18 @@ class _SignUpFormState extends State<SignUpForm> {
       obscureText: true,
       onSaved: (newValue) => conform_password = newValue,
       onChanged: (value) {
-        if (password == conform_password) {
+        if (value.isNotEmpty) {
+          removeError(error: kPassNullError);
+        } else if (value.isNotEmpty && password == conform_password) {
           removeError(error: kMatchPassError);
         }
-        return null;
+        conform_password = value;
       },
       validator: (value) {
         if (value!.isEmpty) {
+          addError(error: kPassNullError);
           return "";
-        } else if (password != conform_password) {
+        } else if ((password != value)) {
           addError(error: kMatchPassError);
           return "";
         }
