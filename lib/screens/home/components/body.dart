@@ -1,6 +1,9 @@
+import 'package:e_commerce/components/product_card.dart';
+import 'package:e_commerce/models/Product.dart';
 import 'package:e_commerce/screens/home/components/categories.dart';
 import 'package:e_commerce/screens/home/components/discount_banner.dart';
 import 'package:e_commerce/screens/home/components/home_header.dart';
+import 'package:e_commerce/screens/home/components/popular_products.dart';
 import 'package:e_commerce/screens/home/components/section_title.dart';
 import 'package:e_commerce/screens/home/components/special_offers.dart';
 import 'package:e_commerce/size_config.dart';
@@ -17,14 +20,14 @@ class Body extends StatelessWidget {
           children: [
             SizedBox(height: getProportionateScreenWidth(20)),
             HomeHeader(),
-            SizedBox(height: getProportionateScreenWidth(30)),
+            SizedBox(height: getProportionateScreenWidth(20)),
             DiscountBanner(),
-            SizedBox(height: getProportionateScreenWidth(30)),
+            SizedBox(height: getProportionateScreenWidth(10)),
             Categories(),
-            SizedBox(height: getProportionateScreenWidth(30)),
             SpecialOffers(),
             SizedBox(height: getProportionateScreenWidth(30)),
-            SectionTitle(text: "Popular Product", press: () {})
+            PopularProducts(),
+            SizedBox(height: getProportionateScreenWidth(30)),
           ],
         ),
       ),
