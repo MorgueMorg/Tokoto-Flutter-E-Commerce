@@ -1,3 +1,4 @@
+import 'package:e_commerce/screens/home/components/categories.dart';
 import 'package:e_commerce/screens/home/components/discount_banner.dart';
 import 'package:e_commerce/screens/home/components/home_header.dart';
 import 'package:e_commerce/size_config.dart';
@@ -16,6 +17,7 @@ class Body extends StatelessWidget {
             HomeHeader(),
             SizedBox(height: getProportionateScreenWidth(30)),
             DiscountBanner(),
+            Categories(),
           ],
         ),
       ),
