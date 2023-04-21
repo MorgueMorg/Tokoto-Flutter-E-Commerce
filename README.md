@@ -1,16 +1,15 @@
-# e_commerce
+# Tokoto-E-Commerce
 
-A new Flutter project.
+A simple project 
 
-## Getting Started
+## Preview
 
-This project is a starting point for a Flutter application.
+<img src="lib/assets/results/splash_screen.png" height="480px"/> <img src="lib/assets/results/welcome_screen.png" height="480px" /> <img src="lib/assets/results/register_screen.png" height="480px" /> <img src="lib/assets/results/errors_screen.png" height="480px" />
 
-A few resources to get you started if this is your first Flutter project:
+<img src="lib/assets/results/complete_screen.png" height="480px"/> <img src="lib/assets/results/success.png" height="480px" /> <img src="lib/assets/results/otp_screen.png" height="480px" /> <img src="lib/assets/results/forgot_screen.png" height="480px" />
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<img src="lib/assets/results/home_screen.png" height="320px"/> <img src="lib/assets/results/details_screen.png" height="320px" /> <img src="lib/assets/results/cart_screen.png" height="480px" /> <img src="lib/assets/results/profile_screen.png" height="480px" />
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Features
+
+- Flutter
