@@ -1,3 +1,5 @@
+import 'package:e_commerce/components/custom_bottom_nav_bar.dart';
+import 'package:e_commerce/enums.dart';
 import 'package:e_commerce/screens/home/components/body.dart';
 import 'package:flutter/material.dart';
 
@@ -7,6 +9,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Body(),
+      bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.home),
     );
   }
 }

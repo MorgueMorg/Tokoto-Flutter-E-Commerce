@@ -1,3 +1,6 @@
+import 'package:e_commerce/constants.dart';
+import 'package:e_commerce/screens/profile/components/profile_menu.dart';
+import 'package:e_commerce/screens/profile/components/profile_pic.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -6,39 +9,36 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      SizedBox(
-        height: 115,
-        width: 115,
-        child: Stack(
-          fit: StackFit.expand,
-          children: [
-            CircleAvatar(
-              backgroundImage: AssetImage("assets/images/Profile Image.png"),
-            ),
-            Positioned(
-              right: -10,
-              bottom: 0,
-              child: SizedBox(
-                height: 46,
-                width: 46,
-                child: TextButton(
-                  style: TextButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50),
-                      side: BorderSide(color: Colors.white),
-                    ),
-                    primary: Colors.white,
-                    backgroundColor: Color(0xFFF5F6F9),
-                  ),
-                  onPressed: () {},
-                  child: SvgPicture.asset("assets/icons/Camera Icon.svg"),
-                ),
-              ),
-            ),
-          ],
+    return Column(
+      children: [
+        ProfilePic(),
+        SizedBox(height: 20),
+        ProfileMenu(
+          icon: "assets/icons/User Icon.svg",
+          text: "My Account",
+          press: () {},
         ),
-      ),
-    ]);
+        ProfileMenu(
+          icon: "assets/icons/Bell.svg",
+          text: "Notifications",
+          press: () {},
+        ),
+        ProfileMenu(
+          icon: "assets/icons/Settings.svg",
+          text: "Settings",
+          press: () {},
+        ),
+        ProfileMenu(
+          icon: "assets/icons/Question mark.svg",
+          text: "Help Center",
+          press: () {},
+        ),
+        ProfileMenu(
+          icon: "assets/icons/Log out.svg",
+          text: "Log Out",
+          press: () {},
+        ),
+      ],
+    );
   }
 }
